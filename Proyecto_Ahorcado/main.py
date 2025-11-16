@@ -44,19 +44,19 @@ def main_menu():
         print("\n" + SEPARATOR_CHAR * 80) 
         
         if choice == '1':
-            print("\n[INFO] Abriendo el programa... (Presiona Enter para volver)")
+            print("\n Abriendo el programa... (Presiona Enter para volver)")
             input()
         elif choice == '2':
-            print("\n[INFO] Mostrando opciones... (Presiona Enter para volver)")
+            print("\n Mostrando opciones... (Presiona Enter para volver)")
             input()
         elif choice == '3':
-            print("\n[INFO] Información del autor: Yo. (Presiona Enter para volver)")
+            print("\n Información del autor: Yo. (Presiona Enter para volver)")
             input()
         elif choice == '4':
-            print("\n[INFO] ¡Adiós! Nos vemos pronto.")
+            print("\n ¡Adiós! Nos vemos pronto.")
             break
         else:
-            print("\n[ERROR] Opción inválida. Intenta un número del 1 al 4.")
+            print("\n ERROR Opción inválida. Intenta un número del 1 al 4.")
             input("Presiona Enter para intentar de nuevo...")
 
 if __name__ == "__main__":
