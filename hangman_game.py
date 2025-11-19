@@ -27,4 +27,26 @@ import random
 # -------- FIN PARTE DE SOSA -------- #
 
 
+# -------- INICIO PARTE DE MARCOS -------- #
+
+import pygame
+import time
+
+# Inicializar pygame
+pygame.init()
+pygame.mixer.init()
+
+# Cargar un sonido
+sonido = pygame.mixer.Sound("background.music.wav")
+
+# Reproducir sonido
+sonido.play()
+
+print("Reproduciendo sonido...")
+
+# Mantener el programa vivo para poder escuchar el sonido
+time.sleep(5)
+
+# -------- FIN PARTE DE MARCOS -------- #
+
 
