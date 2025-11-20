@@ -38,3 +38,4 @@ import random
 def get_random_word(word):
     index = random.randint(0, len(word) - 1) #Random Index
     return word[index]
+    return word[index]
