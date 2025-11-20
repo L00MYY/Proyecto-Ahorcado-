@@ -12,7 +12,7 @@ def hangman_game(screen):
     
     # Seleccionar palabra aleatoria
     secret_word = get_random_word(words)
-    print("Palabra secreta seleccionada:", secret_word)  # Para pruebas
+    print("Palabra secreta seleccionada:", secret_word)  # PARA PRUEBAS -- BORRAR DESPUES DE PROBAR
     
 # -------- FIN PARTE DE OSCAR -------- #
 
