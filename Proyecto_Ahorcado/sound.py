@@ -14,7 +14,17 @@ losing_sound = pygame.mixer.Sound("sounds/losing.sound.wav")
 enter_sound = pygame.mixer.Sound("sounds/enter.sound.wav")
 background_sound = pygame.mixer.Sound("sounds/background.music.wav")
 background_sound.play(-1)
-background_sound.set_volume(0.2)
+
+background_sound.set_volume(0.1)
+enter_sound.set_volume(1.0)
+sound_correct.set_volume(1.0)
+sound_incorrect.set_volume(1.0)
+winning_sound.set_volume(1.0)
+losing_sound.set_volume(1.0)
+
 
 def play_correct_sound():
     sound_correct.play()
+    
+
+    
