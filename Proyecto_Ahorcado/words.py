@@ -1,3 +1,5 @@
+
+
 def remove_accents(word): # remove_accents(word) reemplaza caracteres acentuados por sus equivalentes sin acento
     replacements = {'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U', 'Ü': 'U', 'Ñ':'N',}
     
@@ -35,4 +37,5 @@ import random
 
 def get_random_word(word):
     index = random.randint(0, len(word) - 1) #Random Index
+    return word[index]
     return word[index]
