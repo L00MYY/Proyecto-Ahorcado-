@@ -1,8 +1,6 @@
 import pygame
 import random
 from draw import draw_doll
-from sound import play_correct_sound
-
 
 
 PALABRAS = ["PYGAME", "AHORCADO", "JUEGO", "PROGRAMACION", "EQUIPO"]

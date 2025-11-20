@@ -16,5 +16,5 @@ background_sound = pygame.mixer.Sound("sounds/background.music.wav")
 background_sound.play(-1)
 background_sound.set_volume(0.2)
 
-def play_correct_sound(sound_correct):
+def play_correct_sound():
     sound_correct.play()
