@@ -182,7 +182,6 @@ if __name__ == "__main__":
 import pygame
 import sys
 from game import hangman_game
-from sound import play_correct_sound
 
 pygame.init()
 
