@@ -4,7 +4,16 @@ import random
 
 
 # -------- INICIO PARTE DE OSCAR -------- #
+from words import load_words, get_random_word
+def hangman_game(screen):
 
+    # Cargar palabras desde el archivo
+    words = load_words("Proyecto_Ahorcado/words.txt")
+    
+    # Seleccionar palabra aleatoria
+    secret_word = get_random_word(words)
+    print("Palabra secreta seleccionada:", secret_word)  # Para pruebas
+    
 # -------- FIN PARTE DE OSCAR -------- #
 
 
@@ -27,10 +36,5 @@ import random
 # -------- FIN PARTE DE SOSA -------- #
 
 
-# -------- INICIO PARTE DE MARCOS -------- #
-import os
-print("Working directory:", os.getcwd())
-
-# -------- FIN PARTE DE MARCOS -------- #
 
 
