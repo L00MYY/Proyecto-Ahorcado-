@@ -190,10 +190,10 @@ GREEN = (0, 255, 0)
 YELLOW = (255, 255, 0)
 BLUE = (52, 152, 219)
 
-SCREEN_WIDTH = 600
+SCREEN_WIDTH = 700
 SCREEN_HEIGHT = 400
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Menú Básico")
+pygame.display.set_caption("Menú")
 
 font_small = pygame.font.Font(None, 24)
 font_medium = pygame.font.Font(None, 36)
@@ -229,7 +229,7 @@ def draw_loading_screen():
     pygame.draw.rect(screen, GREEN, (bar_x, bar_y, bar_width, bar_height))
     draw_text_centered("100%", font_small, GREEN, bar_y + bar_height + 20)
 
-    draw_text_centered("Carga Completa. Presiona el mouse para continuar.", font_medium, WHITE, 300)
+    draw_text_centered("Carga Completa. Haz clic para continuar.", font_medium, WHITE, 300)
     
     pygame.display.flip()
 
@@ -250,9 +250,8 @@ def main_menu_simple():
     
     options = [
         ("1", "Abrir el programa", "RUN"),
-        ("2", "Ver opciones", "OPTIONS"),
-        ("3", "Acerca de", "ABOUT"),
-        ("4", "Salir", "QUIT")
+        ("2", "Acerca de", "ABOUT"),
+        ("3", "Salir", "QUIT")
     ]
     
     button_rects = []
