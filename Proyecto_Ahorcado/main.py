@@ -181,6 +181,7 @@ if __name__ == "__main__":
 
 import pygame
 import sys
+from game import hangman_game
 
 pygame.init()
 
@@ -191,7 +192,7 @@ YELLOW = (255, 255, 0)
 BLUE = (52, 152, 219)
 
 SCREEN_WIDTH = 700
-SCREEN_HEIGHT = 400
+SCREEN_HEIGHT = 450
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Menú")
 
@@ -273,8 +274,8 @@ def main_menu_simple():
                         if target == "QUIT":
                             running = False
                         elif target == "RUN":
-                            print("Abriendo el programa...") 
-                            running = False
+                            #EJECUTAMOS
+                            hangman_game(screen)
                         elif target == "OPTIONS":
                             draw_text_centered("Mostrando opciones... (Clic para volver)", font_medium, YELLOW, center_y)
                             pygame.display.flip()
