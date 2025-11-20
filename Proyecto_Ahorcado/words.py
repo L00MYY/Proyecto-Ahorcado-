@@ -1,5 +1,4 @@
 
-
 def remove_accents(word): # remove_accents(word) reemplaza caracteres acentuados por sus equivalentes sin acento
     replacements = {'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U', 'Ü': 'U', 'Ñ':'N',}
     
