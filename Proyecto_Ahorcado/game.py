@@ -16,8 +16,8 @@ def hangman_game(ventana):
     letras_incorrectas = set()
     intentos = 6
 
-    fuente = pygame.font.Font(None, 40)
-    fuente_final = pygame.font.Font(None, 55)
+    font_medium = pygame.font.Font(None, 36)
+    font_large = pygame.font.Font(None, 50)
 
     reloj = pygame.time.Clock()
     jugando = True              # Para evitar seguir escribiendo al perder o ganar
@@ -59,20 +59,21 @@ def hangman_game(ventana):
         for letra in palabra:
             mostrar += letra + " " if letra in letras_adivinadas else "_ "
 
-        texto_palabra = fuente.render(mostrar, True, (255, 255, 255))
-        ventana.blit(texto_palabra, (200, 200))
+        texto_palabra = font_large.render(mostrar, True, (255, 255, 255))
+        ventana.blit(texto_palabra, (80, 100))
 
         # Letras incorrectas
-        texto_incorrectas = fuente.render(
+        texto_incorrectas = font_medium.render(
             "Incorrectas: " + " ".join(letras_incorrectas),
             True,
             (255, 100, 100)
         )
-        ventana.blit(texto_incorrectas, (200, 260))
+        #                                 POSICIÓN
+        ventana.blit(texto_incorrectas, (80, 160))
 
         # Intentos restantes
-        texto_intentos = fuente.render(f"Vidas: {intentos}", True, (200, 180, 0))
-        ventana.blit(texto_intentos, (200, 320))
+        texto_intentos = font_medium.render(f"Vidas: {intentos}", True, (200, 180, 0))
+        ventana.blit(texto_intentos, (80, 220))
 
         # ----------------------
         # Dibujar muñeco según vidas
@@ -106,10 +107,10 @@ def hangman_game(ventana):
                 msg = f"PERDISTE. La palabra era {palabra}"
                 color = (255, 80, 80)
 
-            texto_final = fuente_final.render(msg, True, color)
-            ventana.blit(texto_final, (200, 380))
+            texto_final = font_medium.render(msg, True, color)
+            ventana.blit(texto_final, (80, 325))
 
-            texto_restart = fuente.render("Presiona cualquier tecla para jugar de nuevo", True, (200, 200, 200))
+            texto_restart = font_medium.render("Presiona cualquier tecla para jugar de nuevo", True, (200, 200, 200))
             ventana.blit(texto_restart, (120, 450))
 
         pygame.display.update()
