@@ -12,7 +12,7 @@ sound_incorrect = pygame.mixer.Sound("sounds/incorrect.sound.wav")
 winning_sound = pygame.mixer.Sound("sounds/winning.sound.wav")
 losing_sound = pygame.mixer.Sound("sounds/losing.sound.wav")
 enter_sound = pygame.mixer.Sound("sounds/enter.sound.wav")
-background_sound = pygame.mixer.Sound("sounds/background_music.wav")
+background_sound = pygame.mixer.Sound("sounds/background.music.wav")
 background_sound.play(-1)
 
 elif evento.key == pygame.K_RETURN:
