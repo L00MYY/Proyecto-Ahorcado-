@@ -17,6 +17,12 @@ El proyecto utiliza las siguientes librerías:
 Usada para la creación de la ventana, captura de eventos del teclado, renderizado de texto, dibujo del ahorcado y animaciones de la barra de carga.
 Instalación:
 pip install pygame
+3. Versión funcional de Python
+El programa ha sido probado y funciona correctamente en las siguientes versiones de Python:
+Python 3.8
+Python 3.9
+Python 3.10
+Python 3.11
 4. Detalles relevantes sobre el funcionamiento
 5. El dibujo del ahorcado se divide en seis etapas, correspondientes a los errores cometidos por el usuario.
 El juego selecciona una palabra aleatoria de una lista interna predefinida.
