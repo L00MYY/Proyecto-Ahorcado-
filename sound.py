@@ -15,44 +15,16 @@ enter_sound = pygame.mixer.Sound("sounds/enter.sound.wav")
 background_sound = pygame.mixer.Sound("sounds/background.music.wav")
 background_sound.play(-1)
 
-elif evento.key == pygame.K_RETURN:
-    enter_sound.play()
-    
-if letra in secret_word:
+background_sound.set_volume(0.1)
+enter_sound.set_volume(1.0)
+sound_correct.set_volume(1.0)
+sound_incorrect.set_volume(1.0)
+winning_sound.set_volume(1.0)
+losing_sound.set_volume(1.0)
+
+
+def play_correct_sound():
     sound_correct.play()
     
-else: 
-    errors += 1
-    sound_incorrect.play()
 
-if win:
-    winning_sound.play
-    victory_animation(screen)
     
-if errors == max_errors:
-    losing_sound.play()
-    losing_animation(screen)
-    
-def victory_animation(screen):
-    font = pygame.font.Font(None, 80)
-    text = font.render("¡YOU WON", True, (0, 255, 9))
-    y = 600
-    
-    for i in range(60):
-        screen.fill((0,0,0))
-        screen.blit(text, (200,y))
-        y -= 5
-        pygame.display.update()
-        pygame.time.delay(30)
-        
-def losing_animation(screen):
-    font  = pygame.font.Font(None, 80)
-    text = font.render("YOU LOST!", True, (255, 0, 0))
-    
-    for i in range(30):
-        screen.fill((i*8, 0, 0))
-        screen.blit(text, (200,250))
-        pygame.display.update()
-        pygame.time.delay(40)
-        
-

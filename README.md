@@ -17,6 +17,12 @@ El proyecto utiliza las siguientes librerías:
 Usada para la creación de la ventana, captura de eventos del teclado, renderizado de texto, dibujo del ahorcado y animaciones de la barra de carga.
 Instalación:
 pip install pygame
+3. Versión funcional de Python
+El programa ha sido probado y funciona correctamente en las siguientes versiones de Python:
+Python 3.8
+Python 3.9
+Python 3.10
+Python 3.11
 4. Detalles relevantes sobre el funcionamiento
 5. El dibujo del ahorcado se divide en seis etapas, correspondientes a los errores cometidos por el usuario.
 El juego selecciona una palabra aleatoria de una lista interna predefinida.
@@ -25,3 +31,12 @@ Menú principal
 Pantalla de carga
 Lógica del juego
 Sistema de dibujo del personaje
+6. Componentes clave
+draw_text_centered(text, font, color, y)
+draw_loading_screen()
+main_menu_simple()
+wait_for_click()
+7. Funciones Clave
+draw_text_centered(): dibuja texto centrado en la ventana y devuelve su rectángulo para detección de clics.
+draw_loading_screen(): muestra la pantalla de carga con barra al 100% y mensaje para continuar.
+main_menu_simple(): controla el flujo completo del menú, detecta clics en las opciones y ejecuta las acciones correspondientes. wait_for_click(): pausa la ejecución hasta que el usuario haga clic.

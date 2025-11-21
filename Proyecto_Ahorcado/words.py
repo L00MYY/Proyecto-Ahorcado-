@@ -1,1 +1,0 @@
-"Carga palabras desde archivo palabras.txt"
