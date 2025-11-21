@@ -31,3 +31,12 @@ Menú principal
 Pantalla de carga
 Lógica del juego
 Sistema de dibujo del personaje
+6. Componentes clave
+draw_text_centered(text, font, color, y)
+draw_loading_screen()
+main_menu_simple()
+wait_for_click()
+7. Funciones Clave
+draw_text_centered(): dibuja texto centrado en la ventana y devuelve su rectángulo para detección de clics.
+draw_loading_screen(): muestra la pantalla de carga con barra al 100% y mensaje para continuar.
+main_menu_simple(): controla el flujo completo del menú, detecta clics en las opciones y ejecuta las acciones correspondientes. wait_for_click(): pausa la ejecución hasta que el usuario haga clic.
