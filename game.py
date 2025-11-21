@@ -79,8 +79,8 @@ def hangman_game(ventana):
         # ----------------------
         # Dibujar muñeco según vidas
         # ----------------------
-        x = 600
-        y = 200
+        x = 850
+        y = 175
         draw_doll(ventana, x, y, intentos)
 
         # ----------------------
