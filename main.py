@@ -71,8 +71,7 @@ def main_menu_simple():
     
     options = [
         ("1", "Abrir el programa", "RUN"),
-        ("2", "Acerca de", "ABOUT"),
-        ("3", "Salir", "QUIT")
+        ("2", "Salir", "QUIT")
     ]
     
     button_rects = []
@@ -98,10 +97,6 @@ def main_menu_simple():
                             hangman_game(screen)
                         elif target == "OPTIONS":
                             draw_text_centered("Mostrando opciones... (Clic para volver)", font_medium, YELLOW, center_y)
-                            pygame.display.flip()
-                            wait_for_click()
-                        elif target == "ABOUT":
-                            draw_text_centered("Información: Yo. (Clic para volver)", font_medium, YELLOW, center_y)
                             pygame.display.flip()
                             wait_for_click()
         screen.fill(BLACK)

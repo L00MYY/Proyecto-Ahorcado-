@@ -21,6 +21,8 @@ def hangman_game(ventana):
     letras_incorrectas = set()
     intentos = 6
 
+    font_letters = pygame.font.Font(None, 75)
+
     font_medium = pygame.font.Font(None, 36)
     font_large = pygame.font.Font(None, 50)
 
@@ -67,7 +69,7 @@ def hangman_game(ventana):
         for letra in word:
             mostrar += letra + " " if letra in letras_adivinadas else "_ "
 
-        texto_palabra = font_large.render(mostrar, True, (255, 255, 255))
+        texto_palabra = font_letters.render(mostrar, True, (255, 255, 255))
         ventana.blit(texto_palabra, (80, 100))
 
         # Letras incorrectas
@@ -120,8 +122,8 @@ def hangman_game(ventana):
             texto_final = font_medium.render(msg, True, color)
             ventana.blit(texto_final, (80, 325))
 
-            texto_restart = font_medium.render("Presiona cualquier tecla para jugar de nuevo", True, (200, 200, 200))
-            ventana.blit(texto_restart, (120, 450))
+            texto_restart = font_medium.render("Presiona cualquier tecla para volver al menú.", True, (200, 200, 200))
+            ventana.blit(texto_restart, (80, 450))
 
         pygame.display.update()
         reloj.tick(60)
