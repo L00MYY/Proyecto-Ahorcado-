@@ -7,14 +7,10 @@ from sound import play_correct_sound, play_enter_sound, play_incorrect_sound, pl
 
 def hangman_game(ventana):
 
-    # ----------------------
-    # Palabra aleatoria
-    # ----------------------
     #palabras = ["PYTHON", "PROGRAMACION", "PANTALLA", "AHORCADO", "JUEGO", "TECLADO"]
 
     words = load_words("words.txt")
-    print("Palabras cargadas:", words[:100], "...")
-
+    #print("Palabras cargadas:", words[:100], "...")
     word = get_random_word(words)
 
     letras_adivinadas = set()
@@ -27,28 +23,27 @@ def hangman_game(ventana):
     font_large = pygame.font.Font(None, 50)
 
     reloj = pygame.time.Clock()
-    jugando = True              # Para evitar seguir escribiendo al perder o ganar
+    jugando = True              
     game_over = False           # Estado final del juego
 
     while True:
         ventana.fill((30, 30, 30))
 
-        # ----------------------
-        # EVENTOS
-        # ----------------------
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
                 pygame.quit()
                 exit()
 
             if game_over:
-                # Si ya terminó la partida, presionar cualquier tecla reinicia
+               # Volver a empezar si ya se terminó el juego
                 if evento.type == pygame.KEYDOWN:
                     play_enter_sound()
-                    return  # Regresa a main() para iniciar otra vez
+                    # Volver a main
+                    return  
 
-            # SOLO acepta letras si aún está jugando
+            
             if jugando and evento.type == pygame.KEYDOWN:
+                # rango entre letras de la A a la Z
                 if pygame.K_a <= evento.key <= pygame.K_z:
                     letra = chr(evento.key).upper()
 
@@ -59,12 +54,10 @@ def hangman_game(ventana):
                         if letra not in letras_incorrectas:
                             letras_incorrectas.add(letra)
                             intentos -= 1
-                            intentos = max(intentos, 0)  # Para que NO llegue a negativo
+                            intentos = max(intentos, 0)  
                             play_incorrect_sound()
 
-        # ----------------------
-        # DIBUJAR PALABRA
-        # ----------------------
+       
         mostrar = ""
         for letra in word:
             mostrar += letra + " " if letra in letras_adivinadas else "_ "
@@ -85,32 +78,25 @@ def hangman_game(ventana):
         texto_intentos = font_medium.render(f"Vidas: {intentos}", True, (200, 180, 0))
         ventana.blit(texto_intentos, (80, 220))
 
-        # ----------------------
-        # Dibujar muñeco según vidas
-        # ----------------------
         x = 850
         y = 175
         draw_doll(ventana, x, y, intentos)
 
-        # ----------------------
-        # CONDICIONES DE FIN
-        # ----------------------
+        
         if jugando:
-            # GANÓ
+            # Ganando
             if all(letra in letras_adivinadas for letra in word):
                 jugando = False
                 game_over = True
                 play_winning_sound()
 
-            # PERDIÓ
+            # Perdiendo
             if intentos == 0:
                 jugando = False
                 game_over = True
                 play_losing_sound()
 
-        # ----------------------
-        # MENSAJE FINAL
-        # ----------------------
+    
         if game_over:
             if intentos > 0:
                 msg = "¡GANASTE!"

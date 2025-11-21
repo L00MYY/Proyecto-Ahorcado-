@@ -22,13 +22,13 @@ def load_words(path):
     lines = file.readlines()
     file.close()
     
-    
+    # Este for recorre las palabras, quita los acentos y vuelve todos los caracteres en mayúsculas.
     for line in lines:
-        line = line.strip()
+        line = line.strip()#Eliminia todo espacio entre cada palabra
         if line != "":
-            upper = line.upper()
-            clean = remove_accents(upper)
-            words.append(clean)
+            upper = line.upper()#Los hace mayuscula
+            clean = remove_accents(upper)#Quitamos los acentos
+            words.append(clean)#Guardamos las palabras sin acentos, sin espacios y en mayúsculas
             
     return words
 
