@@ -133,5 +133,4 @@ def wait_for_click():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 wait = False
 
-if __name__ == "__main__":
-    main_menu_simple()
+main_menu_simple()
