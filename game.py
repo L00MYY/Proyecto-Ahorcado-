@@ -2,6 +2,7 @@ import pygame
 import random
 from draw import draw_doll
 
+
 PALABRAS = ["PYGAME", "AHORCADO", "JUEGO", "PROGRAMACION", "EQUIPO"]
 
 def hangman_game(ventana):
