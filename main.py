@@ -11,8 +11,8 @@ GREEN = (0, 255, 0)
 YELLOW = (255, 255, 0)
 BLUE = (52, 152, 219)
 
-SCREEN_WIDTH = 700
-SCREEN_HEIGHT = 450
+SCREEN_WIDTH = 1100
+SCREEN_HEIGHT = 720
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Menú")
 
