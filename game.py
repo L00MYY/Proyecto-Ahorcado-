@@ -1,17 +1,21 @@
 import pygame
 import random
 from draw import draw_doll
+from words import load_words, get_random_word
 
 
-PALABRAS = ["PYGAME", "AHORCADO", "JUEGO", "PROGRAMACION", "EQUIPO"]
 
 def hangman_game(ventana):
 
     # ----------------------
     # Palabra aleatoria
     # ----------------------
-    palabras = ["PYTHON", "PROGRAMACION", "PANTALLA", "AHORCADO", "JUEGO", "TECLADO"]
-    palabra = random.choice(palabras)
+    #palabras = ["PYTHON", "PROGRAMACION", "PANTALLA", "AHORCADO", "JUEGO", "TECLADO"]
+
+    words = load_words("words.txt")
+    print("Palabras cargadas:", words[:100], "...")
+
+    word = get_random_word(words)
 
     letras_adivinadas = set()
     letras_incorrectas = set()
@@ -45,7 +49,7 @@ def hangman_game(ventana):
                 if pygame.K_a <= evento.key <= pygame.K_z:
                     letra = chr(evento.key).upper()
 
-                    if letra in palabra:
+                    if letra in word:
                         letras_adivinadas.add(letra)
                     else:
                         if letra not in letras_incorrectas:
@@ -57,7 +61,7 @@ def hangman_game(ventana):
         # DIBUJAR PALABRA
         # ----------------------
         mostrar = ""
-        for letra in palabra:
+        for letra in word:
             mostrar += letra + " " if letra in letras_adivinadas else "_ "
 
         texto_palabra = font_large.render(mostrar, True, (255, 255, 255))
@@ -88,7 +92,7 @@ def hangman_game(ventana):
         # ----------------------
         if jugando:
             # GANÓ
-            if all(letra in letras_adivinadas for letra in palabra):
+            if all(letra in letras_adivinadas for letra in word):
                 jugando = False
                 game_over = True
 
@@ -105,7 +109,7 @@ def hangman_game(ventana):
                 msg = "¡GANASTE!"
                 color = (0, 255, 0)
             else:
-                msg = f"PERDISTE. La palabra era {palabra}"
+                msg = f"PERDISTE. La palabra era {word}"
                 color = (255, 80, 80)
 
             texto_final = font_medium.render(msg, True, color)
