@@ -1,4 +1,3 @@
-
 import pygame
 pygame.init()
 pygame.mixer.init()
@@ -22,9 +21,17 @@ sound_incorrect.set_volume(1.0)
 winning_sound.set_volume(1.0)
 losing_sound.set_volume(1.0)
 
-
 def play_correct_sound():
     sound_correct.play()
-    
 
+def play_incorrect_sound():
+    sound_incorrect.play()
     
+def play_winning_sound():
+    winning_sound.play()
+    
+def play_losing_sound():
+    losing_sound.play()
+    
+def play_enter_sound():
+    enter_sound.play()

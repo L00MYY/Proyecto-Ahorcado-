@@ -2,7 +2,7 @@ import pygame
 import random
 from draw import draw_doll
 from words import load_words, get_random_word
-
+from sound import play_correct_sound, play_enter_sound, play_incorrect_sound, play_losing_sound, play_winning_sound
 
 
 def hangman_game(ventana):
@@ -42,6 +42,7 @@ def hangman_game(ventana):
             if game_over:
                 # Si ya terminó la partida, presionar cualquier tecla reinicia
                 if evento.type == pygame.KEYDOWN:
+                    play_enter_sound()
                     return  # Regresa a main() para iniciar otra vez
 
             # SOLO acepta letras si aún está jugando
@@ -51,11 +52,13 @@ def hangman_game(ventana):
 
                     if letra in word:
                         letras_adivinadas.add(letra)
+                        play_correct_sound()
                     else:
                         if letra not in letras_incorrectas:
                             letras_incorrectas.add(letra)
                             intentos -= 1
                             intentos = max(intentos, 0)  # Para que NO llegue a negativo
+                            play_incorrect_sound()
 
         # ----------------------
         # DIBUJAR PALABRA
@@ -95,11 +98,13 @@ def hangman_game(ventana):
             if all(letra in letras_adivinadas for letra in word):
                 jugando = False
                 game_over = True
+                play_winning_sound()
 
             # PERDIÓ
             if intentos == 0:
                 jugando = False
                 game_over = True
+                play_losing_sound()
 
         # ----------------------
         # MENSAJE FINAL
