@@ -9,7 +9,7 @@ import words
 def hangman_game(screen):
 
     # Cargar palabras desde el archivo
-    words = load_words(r"C:\Users\oscar\Desktop\Proyecto\Proyecto_Ahorcado\words.txt")
+    words = load_words(words)
 
     # Seleccionar palabra aleatoria
     secret_word = get_random_word(words)
